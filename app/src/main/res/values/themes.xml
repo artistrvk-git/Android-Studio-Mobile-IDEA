@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Dark Theme (Android Studio Darcula) -->
+    <style name="Theme.AndroidStudioMobile" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/dark_accent</item>
+        <item name="colorPrimaryDark">@color/dark_bg_primary</item>
+        <item name="colorAccent">@color/dark_accent</item>
+        <item name="android:windowBackground">@color/dark_bg_primary</item>
+        <item name="android:statusBarColor">@color/dark_bg_toolbar</item>
+        <item name="android:navigationBarColor">@color/dark_bg_primary</item>
+        <item name="android:textColorPrimary">@color/dark_text_primary</item>
+        <item name="android:textColorSecondary">@color/dark_text_secondary</item>
+    </style>
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.AndroidStudioMobile.Splash" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/splash_bg</item>
+        <item name="android:statusBarColor">@color/splash_bg</item>
+        <item name="android:navigationBarColor">@color/splash_bg</item>
+    </style>
+
+    <!-- Light Theme -->
+    <style name="Theme.AndroidStudioMobile.Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/light_accent</item>
+        <item name="colorPrimaryDark">@color/light_bg_primary</item>
+        <item name="colorAccent">@color/light_accent</item>
+        <item name="android:windowBackground">@color/light_bg_primary</item>
+        <item name="android:statusBarColor">@color/light_bg_toolbar</item>
+        <item name="android:navigationBarColor">@color/light_bg_primary</item>
+        <item name="android:textColorPrimary">@color/light_text_primary</item>
+        <item name="android:textColorSecondary">@color/light_text_secondary</item>
+    </style>
+</resources>

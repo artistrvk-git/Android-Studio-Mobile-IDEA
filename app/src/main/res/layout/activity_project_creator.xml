@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg_primary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBackCreator"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/dark_text_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/new_project"
+                android:textColor="@color/dark_text_primary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Platform Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Platform"
+            android:textColor="@color/dark_text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgPlatform"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbAndroid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/project_android"
+                android:textColor="@color/dark_text_primary"
+                android:buttonTint="@color/dark_accent"
+                android:checked="true"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbPython"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/project_python"
+                android:textColor="@color/dark_text_primary"
+                android:buttonTint="@color/dark_accent"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbReactNative"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/project_react_native"
+                android:textColor="@color/dark_text_primary"
+                android:buttonTint="@color/dark_accent"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbCpp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/project_cpp"
+                android:textColor="@color/dark_text_primary"
+                android:buttonTint="@color/dark_accent"
+                android:padding="8dp" />
+
+            <RadioButton
+                android:id="@+id/rbFlutter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/project_flutter"
+                android:textColor="@color/dark_text_primary"
+                android:buttonTint="@color/dark_accent"
+                android:padding="8dp" />
+        </RadioGroup>
+
+        <!-- Project Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/dark_accent"
+            app:hintTextColor="@color/dark_accent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etProjectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Project Name"
+                android:textColor="@color/dark_text_primary"
+                android:textColorHint="@color/dark_text_secondary"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Package Name (Android) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPackageName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/dark_accent"
+            app:hintTextColor="@color/dark_accent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPackageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Package Name (e.g., com.example.app)"
+                android:textColor="@color/dark_text_primary"
+                android:textColorHint="@color/dark_text_secondary"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Min SDK (Android) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMinSdk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/dark_accent"
+            app:hintTextColor="@color/dark_accent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMinSdk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Minimum SDK (default: 24)"
+                android:textColor="@color/dark_text_primary"
+                android:textColorHint="@color/dark_text_secondary"
+                android:inputType="number"
+                android:text="24" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Language Selection (Android) -->
+        <LinearLayout
+            android:id="@+id/llLanguageSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Language"
+                android:textColor="@color/dark_text_primary"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rgLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbKotlin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kotlin"
+                    android:textColor="@color/dark_text_primary"
+                    android:buttonTint="@color/dark_accent"
+                    android:checked="true"
+                    android:layout_marginEnd="16dp" />
+
+                <RadioButton
+                    android:id="@+id/rbJava"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Java"
+                    android:textColor="@color/dark_text_primary"
+                    android:buttonTint="@color/dark_accent" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <!-- Save Location -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:boxStrokeColor="@color/dark_accent"
+            app:hintTextColor="@color/dark_accent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSaveLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Save Location"
+                android:textColor="@color/dark_text_primary"
+                android:textColorHint="@color/dark_text_secondary"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Create Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreateProject"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Create Project"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/dark_accent" />
+
+    </LinearLayout>
+</ScrollView>

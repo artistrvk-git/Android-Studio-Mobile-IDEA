@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_new_project" android:title="New Project" />
+    <item android:id="@+id/menu_open_project" android:title="Open Project" />
+    <item android:id="@+id/menu_save" android:title="Save" />
+    <item android:id="@+id/menu_save_all" android:title="Save All" />
+    <item android:id="@+id/menu_build_apk" android:title="Build APK" />
+    <item android:id="@+id/menu_clean_build" android:title="Clean &amp; Rebuild" />
+    <item android:id="@+id/menu_sync_gradle" android:title="Sync Gradle" />
+    <item android:id="@+id/menu_sdk_manager" android:title="SDK Manager" />
+    <item android:id="@+id/menu_settings" android:title="Settings" />
+    <item android:id="@+id/menu_about" android:title="About" />
+</menu>

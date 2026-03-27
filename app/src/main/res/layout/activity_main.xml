@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg_primary">
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top Toolbar (Android Studio style) -->
+        <LinearLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/dark_bg_toolbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Menu"
+                android:src="@android:drawable/ic_menu_sort_by_size"
+                android:padding="6dp"
+                app:tint="@color/dark_text_primary" />
+
+            <TextView
+                android:id="@+id/tvProjectName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="middle"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:singleLine="true"
+                android:text="@string/app_name"
+                android:textColor="@color/dark_text_primary"
+                android:textSize="15sp" />
+
+            <ImageButton
+                android:id="@+id/btnRun"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Run"
+                android:src="@android:drawable/ic_media_play"
+                android:padding="6dp"
+                app:tint="@color/green_success" />
+
+            <ImageButton
+                android:id="@+id/btnBuild"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Build"
+                android:src="@android:drawable/ic_menu_manage"
+                android:padding="6dp"
+                app:tint="@color/dark_text_primary" />
+
+            <ImageButton
+                android:id="@+id/btnSync"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Sync"
+                android:src="@android:drawable/ic_popup_sync"
+                android:padding="6dp"
+                app:tint="@color/dark_text_primary" />
+
+            <ImageButton
+                android:id="@+id/btnMore"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="More"
+                android:src="@android:drawable/ic_menu_more"
+                android:padding="6dp"
+                app:tint="@color/dark_text_primary" />
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_border" />
+
+        <!-- Editor Tabs Bar -->
+        <HorizontalScrollView
+            android:id="@+id/tabScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:background="@color/dark_bg_secondary"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/tabContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_border" />
+
+        <!-- Main Content Area (Editor + Bottom Panel) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- Code Editor Area -->
+            <FrameLayout
+                android:id="@+id/editorContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/dark_bg_editor">
+
+                <!-- Empty state message -->
+                <TextView
+                    android:id="@+id/tvEmptyState"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no_file_open"
+                    android:textColor="@color/dark_text_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:padding="32dp" />
+
+                <!-- Code Editor (HorizontalScrollView + EditText with line numbers) -->
+                <LinearLayout
+                    android:id="@+id/editorLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <!-- Line Numbers -->
+                    <TextView
+                        android:id="@+id/tvLineNumbers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_gutter"
+                        android:fontFamily="monospace"
+                        android:gravity="end"
+                        android:minWidth="40dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingTop="8dp"
+                        android:textColor="@color/dark_line_number"
+                        android:textSize="13sp" />
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/dark_border" />
+
+                    <!-- Code Editor -->
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="horizontal">
+
+                        <EditText
+                            android:id="@+id/codeEditor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="monospace"
+                            android:gravity="start|top"
+                            android:importantForAutofill="no"
+                            android:inputType="textMultiLine|textNoSuggestions"
+                            android:padding="8dp"
+                            android:scrollHorizontally="true"
+                            android:textColor="@color/dark_text_primary"
+                            android:textColorHint="@color/dark_text_secondary"
+                            android:textCursorDrawable="@null"
+                            android:textSize="13sp" />
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Resizable Bottom Panel Divider -->
+            <View
+                android:id="@+id/bottomPanelDivider"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/dark_border" />
+
+            <!-- Bottom Panel (Terminal / Build / Logcat) -->
+            <LinearLayout
+                android:id="@+id/bottomPanel"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:background="@color/dark_bg_terminal">
+
+                <!-- Bottom Panel Tabs -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:background="@color/dark_bg_secondary"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tabTerminal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/terminal"
+                        android:textColor="@color/dark_text_primary"
+                        android:textSize="12sp"
+                        android:background="@color/dark_bg_terminal" />
+
+                    <TextView
+                        android:id="@+id/tabBuildOutput"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/build_output"
+                        android:textColor="@color/dark_text_secondary"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tabLogcat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/logcat"
+                        android:textColor="@color/dark_text_secondary"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- Terminal Content -->
+                <ScrollView
+                    android:id="@+id/terminalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTerminalOutput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="monospace"
+                            android:padding="8dp"
+                            android:textColor="#FF33FF33"
+                            android:textSize="11sp"
+                            android:textIsSelectable="true" />
+
+                        <EditText
+                            android:id="@+id/etTerminalInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="monospace"
+                            android:hint="$ "
+                            android:textColorHint="#FF33FF33"
+                            android:imeOptions="actionSend"
+                            android:importantForAutofill="no"
+                            android:inputType="text"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:singleLine="true"
+                            android:textColor="#FF33FF33"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Status Bar -->
+        <LinearLayout
+            android:id="@+id/statusBar"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:background="@color/dark_bg_status"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp">
+
+            <TextView
+                android:id="@+id/tvStatusLeft"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="Ready"
+                android:textColor="@color/dark_text_secondary"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/tvStatusRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UTF-8 | LF"
+                android:textColor="@color/dark_text_secondary"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Side Navigation Drawer (File Explorer) -->
+    <LinearLayout
+        android:id="@+id/navDrawer"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/dark_bg_sidebar"
+        android:orientation="vertical">
+
+        <!-- Drawer Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/dark_bg_toolbar"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/file_explorer"
+                android:textColor="@color/dark_text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnNewFile"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="New File"
+                android:src="@android:drawable/ic_menu_add"
+                android:padding="4dp"
+                app:tint="@color/dark_text_primary" />
+
+            <ImageButton
+                android:id="@+id/btnRefreshTree"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Refresh"
+                android:src="@android:drawable/ic_popup_sync"
+                android:padding="4dp"
+                app:tint="@color/dark_text_primary" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/dark_border" />
+
+        <!-- File Tree -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fileTreeRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp" />
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
