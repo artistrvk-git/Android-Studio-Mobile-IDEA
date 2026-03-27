@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Android Studio Mobile</string>
+    <string name="splash_slogan">Presented By RVK EDITION</string>
+    <string name="about_title">About Android Studio Mobile</string>
+    <string name="about_version">Version 1.0.0</string>
+    <string name="about_description">A fully functional mobile IDE for building Android, Python, React Native, C++, and Flutter applications.\n\nPresented By RVK EDITION</string>
+    <string name="new_project">New Project</string>
+    <string name="open_project">Open Project</string>
+    <string name="save_project">Save Project</string>
+    <string name="build_apk">Build APK</string>
+    <string name="run_project">Run</string>
+    <string name="sync_gradle">Sync Gradle</string>
+    <string name="settings">Settings</string>
+    <string name="terminal">Terminal</string>
+    <string name="logcat">Logcat</string>
+    <string name="build_output">Build Output</string>
+    <string name="file_explorer">Project</string>
+    <string name="editor">Editor</string>
+    <string name="no_file_open">No file open. Create or open a project to start coding.</string>
+    <string name="permission_required">Storage permission is required for the IDE to function properly.</string>
+    <string name="sdk_downloading">Downloading SDK components…</string>
+    <string name="build_running">Building project…</string>
+    <string name="gradle_syncing">Syncing Gradle dependencies…</string>
+    <string name="project_android">Android (Kotlin/Java)</string>
+    <string name="project_python">Python</string>
+    <string name="project_react_native">React Native</string>
+    <string name="project_cpp">C++ (Native)</string>
+    <string name="project_flutter">Flutter (Dart)</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
+</resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android Studio Dark Theme Colors -->
+    <color name="dark_bg_primary">#FF2B2B2B</color>
+    <color name="dark_bg_secondary">#FF3C3F41</color>
+    <color name="dark_bg_editor">#FF2B2B2B</color>
+    <color name="dark_bg_toolbar">#FF3C3F41</color>
+    <color name="dark_bg_sidebar">#FF313335</color>
+    <color name="dark_bg_tab">#FF4E5254</color>
+    <color name="dark_bg_tab_active">#FF2B2B2B</color>
+    <color name="dark_bg_terminal">#FF1E1E1E</color>
+    <color name="dark_bg_status">#FF3C3F41</color>
+    <color name="dark_text_primary">#FFA9B7C6</color>
+    <color name="dark_text_secondary">#FF808080</color>
+    <color name="dark_text_highlight">#FFFFC66D</color>
+    <color name="dark_border">#FF515151</color>
+    <color name="dark_accent">#FF4A88C7</color>
+    <color name="dark_selection">#FF214283</color>
+    <color name="dark_line_number">#FF606366</color>
+    <color name="dark_gutter">#FF313335</color>
+
+    <!-- Android Studio Light Theme Colors -->
+    <color name="light_bg_primary">#FFFFFFFF</color>
+    <color name="light_bg_secondary">#FFF2F2F2</color>
+    <color name="light_bg_editor">#FFFFFFFF</color>
+    <color name="light_bg_toolbar">#FFF2F2F2</color>
+    <color name="light_bg_sidebar">#FFF7F7F7</color>
+    <color name="light_bg_tab">#FFE8E8E8</color>
+    <color name="light_bg_tab_active">#FFFFFFFF</color>
+    <color name="light_bg_terminal">#FFFFFFFF</color>
+    <color name="light_bg_status">#FFF2F2F2</color>
+    <color name="light_text_primary">#FF000000</color>
+    <color name="light_text_secondary">#FF808080</color>
+    <color name="light_text_highlight">#FF0033B3</color>
+    <color name="light_border">#FFD1D1D1</color>
+    <color name="light_accent">#FF4A88C7</color>
+    <color name="light_selection">#FF3399FF</color>
+    <color name="light_line_number">#FF999999</color>
+    <color name="light_gutter">#FFF0F0F0</color>
+
+    <!-- Syntax Highlighting Colors (Darcula) -->
+    <color name="syntax_keyword">#FFCC7832</color>
+    <color name="syntax_string">#FF6A8759</color>
+    <color name="syntax_number">#FF6897BB</color>
+    <color name="syntax_comment">#FF808080</color>
+    <color name="syntax_annotation">#FFBBB529</color>
+    <color name="syntax_function">#FFFFC66D</color>
+    <color name="syntax_class">#FFA9B7C6</color>
+    <color name="syntax_type">#FF287BDE</color>
+    <color name="syntax_operator">#FFA9B7C6</color>
+    <color name="syntax_error">#FFFF0000</color>
+    <color name="syntax_error_bg">#33FF0000</color>
+
+    <!-- Common Colors -->
+    <color name="green_success">#FF4CAF50</color>
+    <color name="red_error">#FFF44336</color>
+    <color name="yellow_warning">#FFFFEB3B</color>
+    <color name="blue_info">#FF2196F3</color>
+    <color name="splash_bg">#FF2B2B2B</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+</resources>

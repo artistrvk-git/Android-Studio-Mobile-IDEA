@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AndroidStudioMobile" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/dark_accent</item>
+        <item name="colorPrimaryDark">@color/dark_bg_primary</item>
+        <item name="colorAccent">@color/dark_accent</item>
+        <item name="android:windowBackground">@color/dark_bg_primary</item>
+        <item name="android:statusBarColor">@color/dark_bg_toolbar</item>
+        <item name="android:navigationBarColor">@color/dark_bg_primary</item>
+        <item name="android:textColorPrimary">@color/dark_text_primary</item>
+        <item name="android:textColorSecondary">@color/dark_text_secondary</item>
+    </style>
+</resources>
