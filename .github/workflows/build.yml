@@ -2,8 +2,7 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "main" ] # Agar aapki main branch ka naam master hai, toh yahan master likhein
-
+    branches: [ "main" ]
 jobs:
   build:
     runs-on: ubuntu-latest
