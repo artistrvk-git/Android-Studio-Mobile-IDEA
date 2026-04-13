@@ -1,0 +1,10 @@
+name: android-studio-mobile-ide
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - flake8>=4.0.0
+    - pytest>=7.0.0
